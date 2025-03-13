@@ -1,0 +1,2380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>能力提升资料库 - 全方位提升个人核心能力</title>
+    <style>
+        :root {
+            --primary-color: #5e72e4;
+            --secondary-color: #8392ab;
+            --accent-color: #f5365c;
+            --success-color: #2dce89;
+            --warning-color: #fb6340;
+            --info-color: #11cdef;
+            --dark-color: #344767;
+            --light-color: #f8f9fa;
+            --gray-100: #f6f9fc;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #adb5bd;
+            --gray-600: #8898aa;
+            --gray-700: #525f7f;
+            --gray-800: #32325d;
+            --gray-900: #212529;
+            --body-color: #f8f9fe;
+            --text-color: #525f7f;
+            --heading-color: #32325d;
+            --border-radius: 8px;
+            --box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+            --box-shadow-lg: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: var(--body-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .flex-col {
+            flex-direction: column;
+        }
+        
+        .items-center {
+            align-items: center;
+        }
+        
+        .justify-between {
+            justify-content: space-between;
+        }
+        
+        .justify-center {
+            justify-content: center;
+        }
+        
+        .gap-20 {
+            gap: 20px;
+        }
+        
+        .gap-30 {
+            gap: 30px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-10 {
+            margin-bottom: 10px;
+        }
+        
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+        
+        .mt-20 {
+            margin-top: 20px;
+        }
+        
+        .mt-30 {
+            margin-top: 30px;
+        }
+        
+        .mt-50 {
+            margin-top: 50px;
+        }
+        
+        .p-20 {
+            padding: 20px;
+        }
+        
+        .p-30 {
+            padding: 30px;
+        }
+        
+        .py-100 {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: var(--transition);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        }
+        
+        .btn-lg {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-gray {
+            background-color: var(--gray-100);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+            margin-top: 25px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header.scrolled {
+            background-color: white;
+            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+        
+        .scrolled .header-container {
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        
+        .logo-img svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            transition: var(--transition);
+        }
+        
+        .logo:hover .logo-text {
+            color: var(--primary-color);
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 30px;
+            height: 20px;
+            position: relative;
+        }
+        
+        .hamburger span {
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background-color: var(--heading-color);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+        
+        .hamburger span:nth-child(1) {
+            top: 0;
+        }
+        
+        .hamburger span:nth-child(2) {
+            top: 8px;
+        }
+        
+        .hamburger span:nth-child(3) {
+            top: 16px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        
+        /* Hero Section Styles */
+        .hero {
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(120deg, #f6f9fc 0%, #edf2f7 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(94, 114, 228, 0.1), rgba(17, 205, 239, 0.1));
+            z-index: 1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(245, 54, 92, 0.1), rgba(94, 114, 228, 0.1));
+            z-index: 1;
+        }
+        
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            flex-basis: 50%;
+            padding-right: 50px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            color: var(--heading-color);
+        }
+        
+        .hero-title span {
+            color: var(--primary-color);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title span::after {
+            content: "";
+            position: absolute;
+            height: 12px;
+            width: 100%;
+            bottom: 5px;
+            left: 0;
+            z-index: -1;
+            background-color: rgba(94, 114, 228, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .hero-image {
+            flex-basis: 50%;
+            position: relative;
+        }
+        
+        .hero-image-main {
+            width: 100%;
+            max-width: 500px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-lg);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .hero-image-main svg {
+            width: 150px;
+            height: 150px;
+            fill: white;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            box-shadow: var(--box-shadow);
+            flex: 1;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+        
+        .stat-text {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Abilities Section */
+        .abilities {
+            background-color: white;
+        }
+        
+        .abilities-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .ability-card {
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .ability-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 16px;
+            margin: 0 auto 25px;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        
+        .ability-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .ability-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .ability-description {
+            color: var(--gray-600);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .ability-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        
+        .ability-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .ability-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+        }
+        
+        .ability-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .ability-link:hover {
+            transform: translateX(5px);
+        }
+        
+        .ability-link svg {
+            width: 16px;
+            height: 16px;
+            margin-left: 5px;
+        }
+        
+        /* Resources Section */
+        .resources {
+            background-color: var(--gray-100);
+        }
+        
+        .resources-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-img {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .resource-img svg {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .resource-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: rgba(94, 114, 228, 0.1);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .resource-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .resource-description {
+            color: var(--gray-600);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .resource-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        
+        .author-name {
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+        
+        .resource-type {
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+        
+        .resource-type svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+        }
+        
+        /* Why Us Section */
+        .why-us {
+            background-color: white;
+        }
+        
+        .why-us-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .why-us-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .why-us-title {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .why-us-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .why-us-text {
+            color: var(--gray-600);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .why-us-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 12px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature-icon svg {
+            width: 25px;
+            height: 25px;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 0;
+        }
+        
+        .why-us-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .why-us-img {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-lg);
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .why-us-img svg {
+            width: 150px;
+            height: 150px;
+        }
+        
+        /* Process Section */
+        .process {
+            background-color: var(--gray-100);
+        }
+        
+        .process-container {
+            position: relative;
+        }
+        
+        .process-container::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% - 180px);
+            background-color: var(--gray-300);
+            z-index: 1;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+        
+        .process-step:nth-child(even) .process-content {
+            align-items: flex-end;
+        }
+        
+        .process-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: var(--box-shadow);
+            flex-shrink: 0;
+            border: 2px solid var(--primary-color);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .process-icon svg {
+            width: 35px;
+            height: 35px;
+            fill: var(--primary-color);
+        }
+        
+        .process-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .process-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .process-description {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(94, 114, 228, 0.08), rgba(17, 205, 239, 0.08));
+            z-index: 1;
+        }
+        
+        .testimonials-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonials-grid {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 30px;
+            padding: 20px 0;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .testimonials-grid::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .testimonial-card {
+            min-width: 350px;
+            max-width: 350px;
+            scroll-snap-align: start;
+            padding: 30px;
+            position: relative;
+            height: 100%;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            font-size: 4rem;
+            font-family: Georgia, serif;
+            color: rgba(94, 114, 228, 0.1);
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            color: var(--gray-600);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-info p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--gray-600);
+        }
+        
+        .control-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .control-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background-color: var(--gray-100);
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-question {
+            border-bottom-color: var(--gray-200);
+        }
+        
+        .faq-question h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            padding-right: 20px;
+        }
+        
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        
+        .faq-toggle svg {
+            width: 14px;
+            height: 14px;
+            transition: var(--transition);
+            fill: var(--gray-700);
+        }
+        
+        .faq-item.active .faq-toggle {
+            background-color: var(--primary-color);
+        }
+        
+        .faq-item.active .faq-toggle svg {
+            transform: rotate(45deg);
+            fill: white;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+        
+        .faq-content {
+            padding: 0 30px 25px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+        
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: 1;
+        }
+        
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+        }
+        
+        .cta-text {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .cta-btn {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        }
+        
+        .cta-btn.outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .cta-btn.outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--gray-800);
+            color: white;
+            padding: 80px 0 40px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        
+        .footer-logo-img svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-about {
+            color: var(--gray-400);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            color: var(--gray-400);
+        }
+        
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(94, 114, 228, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--primary-color);
+        }
+        
+        .contact-text {
+            line-height: 1.6;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-500);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 991px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .hero {
+                padding: 150px 0 100px;
+            }
+            
+            .hero-content {
+                flex-basis: 100%;
+                padding-right: 0;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                flex-basis: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .process-container::before {
+                display: none;
+            }
+            
+            .process-step {
+                flex-direction: column !important;
+                text-align: left !important;
+                align-items: flex-start !important;
+                gap: 20px !important;
+            }
+            
+            .process-step .process-content {
+                align-items: flex-start !important;
+                width: 100%;
+            }
+            
+            .why-us-features {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 0;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                padding: 30px;
+                transition: var(--transition);
+                margin-right: 0;
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-item {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .why-us-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .stat-item {
+                padding: 10px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .testimonial-card {
+                min-width: 280px;
+                max-width: 280px;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-img">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <div class="logo-text">能力提升资料库</div>
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#hero" class="nav-link">首页</a></li>
+                    <li class="nav-item"><a href="#abilities" class="nav-link">核心能力</a></li>
+                    <li class="nav-item"><a href="#resources" class="nav-link">精选资源</a></li>
+                    <li class="nav-item"><a href="#process" class="nav-link">提升路径</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link">常见问题</a></li>
+                </ul>
+                <a href="#cta" class="btn">立即加入</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">系统化提升你的<span>核心能力</span>，成就更好的自己</h1>
+                <p class="hero-subtitle">我们提供思维认知、语言表达、逻辑思考、情绪管理等全方位能力提升资源，助你突破成长瓶颈，实现自我超越。</p>
+                <div class="hero-buttons">
+                    <a href="#abilities" class="btn btn-lg">探索核心能力</a>
+                    <a href="#why-us" class="btn btn-outline btn-lg">了解我们的方法</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-text">核心能力维度</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-text">高质量资源</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10万+</span>
+                        <span class="stat-text">用户成功提升</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="hero-image-main">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"></path>
+                        <path d="M14 11c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"></path>
+                        <path d="M14.3 16.7L17 19l1-1-2.7-2.3c.4-.6.7-1.3.7-2.2 0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4c.9 0 1.6-.3 2.3-.7z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Core Abilities Section -->
+    <section class="section abilities" id="abilities">
+        <div class="container">
+            <div class="section-title">
+                <h2>核心能力维度</h2>
+                <p>我们从多个维度系统化提升你的核心能力，每一项能力都是成功与幸福人生的重要基石。</p>
+            </div>
+            
+            <div class="abilities-container">
+                <div class="ability-card card">
+                    <div class="ability-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="ability-title">思维认知能力</h3>
+                    <p class="ability-description">提升你的思维广度和深度，打破思维枷锁，学习系统思考、批判性思维等高阶思维模式。</p>
+                    <ul class="ability-list">
+                        <li>系统思维训练</li>
+                        <li>批判性思考方法</li>
+                        <li>思维模型应用</li>
+                        <li>认知偏见克服</li>
+                    </ul>
+                    <a href="#" class="ability-link">了解更多 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="ability-card card">
+                    <div class="ability-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="ability-title">语言表达能力</h3>
+                    <p class="ability-description">掌握清晰、精准、有影响力的表达技巧，提升口头和书面沟通的效果，让你的观点更具说服力。</p>
+                    <ul class="ability-list">
+                        <li>结构化表达技巧</li>
+                        <li>演讲与公众演说</li>
+                        <li>精准表达训练</li>
+                        <li>故事叙述能力</li>
+                    </ul>
+                    <a href="#" class="ability-link">了解更多 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="ability-card card">
+                    <div class="ability-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14h-2V9h-2V7h4v10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="ability-title">逻辑思考能力</h3>
+                    <p class="ability-description">培养结构化思考习惯，提升问题分析和解决能力，让决策更理性，推理更严谨。</p>
+                    <ul class="ability-list">
+                        <li>逻辑推理训练</li>
+                        <li>结构化思考方法</li>
+                        <li>决策分析框架</li>
+                        <li>辩证思考技巧</li>
+                    </ul>
+                    <a href="#" class="ability-link">了解更多 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="ability-card card">
+                    <div class="ability-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="ability-title">情绪管理能力</h3>
+                    <p class="ability-description">学习识别、理解和调节情绪的方法，提高情绪智商，在压力和挑战面前保持冷静和韧性。</p>
+                    <ul class="ability-list">
+                        <li>情绪觉察训练</li>
+                        <li>压力管理技巧</li>
+                        <li>冲突处理方法</li>
+                        <li>积极心态培养</li>
+                    </ul>
+                    <a href="#" class="ability-link">了解更多 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="ability-card card">
+                    <div class="ability-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="ability-title">人际关系能力</h3>
+                    <p class="ability-description">培养高质量人际关系的能力，提升共情、倾听和影响力，建立健康的个人和职业关系网络。</p>
+                    <ul class="ability-list">
+                        <li>有效沟通模式</li>
+                        <li>共情能力培养</li>
+                        <li>人际界限设立</li>
+                        <li>社交影响力提升</li>
+                    </ul>
+                    <a href="#" class="ability-link">了解更多 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="ability-card card">
+                    <div class="ability-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="ability-title">自我认知能力</h3>
+                    <p class="ability-description">深入了解自我，识别内在动机和价值观，培养自我反思习惯，建立健康的自我认同和自信。</p>
+                    <ul class="ability-list">
+                        <li>价值观探索</li>
+                        <li>优势识别与应用</li>
+                        <li>自我反思实践</li>
+                        <li>目标设定与实现</li>
+                    </ul>
+                    <a href="#" class="ability-link">了解更多 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Resources Section -->
+    <section class="section resources section-gray" id="resources">
+        <div class="container">
+            <div class="section-title">
+                <h2>精选能力提升资源</h2>
+                <p>我们精心筛选和整理了最有价值的能力提升资源，帮助你系统化提升各项核心能力。</p>
+            </div>
+            
+            <div class="resources-container">
+                <div class="resource-card card">
+                    <div class="resource-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"></path>
+                            <path d="M15 11.12V7.75l-4.5 4.38 4.5 4.37v-3.38h4v-2h-4zm-9-4.37v2h4v3.38l4.5-4.38-4.5-4.37v3.37h-4z"></path>
+                        </svg>
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-tag">思维认知</span>
+                        <h3 class="resource-title">《思维模型：改变你看世界的方式》</h3>
+                        <p class="resource-description">这份系统化思维模型指南收录了30多种实用思维模型，包括逆向思维、首要原理思考、概率思维等，帮助你建立多元思考框架，提升认知层次。</p>
+                        <div class="resource-meta">
+                            <div class="resource-author">
+                                <div class="author-avatar">张</div>
+                                <span class="author-name">张教授</span>
+                            </div>
+                            <div class="resource-type">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"></path>
+                                </svg>
+                                <span>电子书</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card card">
+                    <div class="resource-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"></path>
+                        </svg>
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-tag">语言表达</span>
+                        <h3 class="resource-title">《表达的艺术：如何让你的观点更有说服力》</h3>
+                        <p class="resource-description">这门课程从结构化表达、故事叙述、非语言沟通等多个维度，全面提升你的表达能力，让你在各种场合都能清晰自信地表达自己的想法。</p>
+                        <div class="resource-meta">
+                            <div class="resource-author">
+                                <div class="author-avatar">李</div>
+                                <span class="author-name">李老师</span>
+                            </div>
+                            <div class="resource-type">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15c0-1.66 1.34-3 3-3 .35 0 .69.07 1 .18V6h5v2h-3v7.03c-.02 1.64-1.35 2.97-3 2.97-1.66 0-3-1.34-3-3z"></path>
+                                </svg>
+                                <span>视频课程</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card card">
+                    <div class="resource-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"></path>
+                        </svg>
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-tag">逻辑思考</span>
+                        <h3 class="resource-title">《结构化思考：从混乱到清晰的思维训练》</h3>
+                        <p class="resource-description">这套工作坊教你如何进行MECE分析、问题分解、优先级排序等结构化思考方法，训练你从复杂问题中找出关键要素，建立清晰的思考框架。</p>
+                        <div class="resource-meta">
+                            <div class="resource-author">
+                                <div class="author-avatar">王</div>
+                                <span class="author-name">王博士</span>
+                            </div>
+                            <div class="resource-type">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path>
+                                </svg>
+                                <span>工作坊</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card card">
+                    <div class="resource-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"></path>
+                        </svg>
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-tag">情绪管理</span>
+                        <h3 class="resource-title">《情绪觉察与调节：重塑内心平静的实用指南》</h3>
+                        <p class="resource-description">这套音频课程结合正念练习和认知行为技术，教你识别情绪触发点，理解情绪背后的需求，掌握有效的情绪调节方法，提升情绪韧性。</p>
+                        <div class="resource-meta">
+                            <div class="resource-author">
+                                <div class="author-avatar">陈</div>
+                                <span class="author-name">陈心理师</span>
+                            </div>
+                            <div class="resource-type">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"></path>
+                                </svg>
+                                <span>音频课程</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card card">
+                    <div class="resource-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path>
+                        </svg>
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-tag">人际关系</span>
+                        <h3 class="resource-title">《高效沟通与人际边界：构建健康关系的指南》</h3>
+                        <p class="resource-description">这份实用指南帮助你理解人际互动的核心原则，掌握沟通中的积极倾听、界限设立、需求表达等关键技能，建立更健康、更满足的人际关系。</p>
+                        <div class="resource-meta">
+                            <div class="resource-author">
+                                <div class="author-avatar">刘</div>
+                                <span class="author-name">刘顾问</span>
+                            </div>
+                            <div class="resource-type">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 5v14H5V5h14m1.1-2H3.9c-.5 0-.9.4-.9.9v16.2c0 .4.4.9.9.9h16.2c.4 0 .9-.5.9-.9V3.9c0-.5-.5-.9-.9-.9zM11 7h6v2h-6V7zm0 4h6v2h-6v-2zm0 4h6v2h-6v-2zM7 7h2v2H7V7zm0 4h2v2H7v-2zm0 4h2v2H7v-2z"></path>
+                                </svg>
+                                <span>实践指南</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-card card">
+                    <div class="resource-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="resource-content">
+                        <span class="resource-tag">自我认知</span>
+                        <h3 class="resource-title">《内在探索：发现真实自我的旅程》</h3>
+                        <p class="resource-description">这套深度反思练习帮助你探索自己的核心价值观、人生目标和内在动机，识别自我限制性信念，建立积极的自我认同，成为更真实的自己。</p>
+                        <div class="resource-meta">
+                            <div class="resource-author">
+                                <div class="author-avatar">周</div>
+                                <span class="author-name">周导师</span>
+                            </div>
+                            <div class="resource-type">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 15l-5-5h3V9h4v4h3l-5 5z"></path>
+                                </svg>
+                                <span>反思工具包</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Us Section -->
+    <section class="section why-us" id="why-us">
+        <div class="container why-us-container">
+            <div class="why-us-content">
+                <h2 class="why-us-title">我们的方法论</h2>
+                <p class="why-us-text">我们基于认知科学、心理学和教育学的最新研究，开发了系统化的能力提升方法论，将抽象的能力转化为可实践的具体行动步骤。通过科学的能力评估、个性化学习路径和刻意练习，帮助你实现真正的能力成长。</p>
+                
+                <div class="why-us-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 5H1v16c0 1.1.9 2 2 2h16v-2H3V5zm11 10h2V5h-4v2h2v8zm7-14H7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 16H7V3h14v14z"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>系统化框架</h4>
+                            <p>将抽象能力分解为可操作的模块和步骤</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>科学化评估</h4>
+                            <p>精准定位你的能力优势和提升空间</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>场景化实践</h4>
+                            <p>通过真实场景演练巩固能力应用</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-text">
+                            <h4>个性化路径</h4>
+                            <p>根据你的特点定制最佳学习路径</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="why-us-image">
+                <div class="why-us-img">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="section process section-gray" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>能力提升路径</h2>
+                <p>我们设计了科学的能力提升流程，帮助你系统化提升核心能力，实现自我成长</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-5h10v2H7zm3.3-3.8L8.4 9.3 7 10.7l3.3 3.3L17 7.3l-1.4-1.4z"></path>
+                            </svg>
+                        </div>
+                        <div class="process-content card">
+                            <h3 class="process-title">第一步：能力评估</h3>
+                            <p class="process-description">通过科学的评估工具，全面了解你的能力现状，识别优势和发展空间，为个性化能力提升计划奠定基础。你将获得详细的能力画像，清晰了解自己在各能力维度的表现。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path>
+                            </svg>
+                        </div>
+                        <div class="process-content card">
+                            <h3 class="process-title">第二步：目标设定</h3>
+                            <p class="process-description">基于评估结果，设定具体、可衡量、有挑战性且实际可行的能力提升目标。我们的目标设定框架会帮助你确保目标既有足够挑战性，又能保持长期动力，避免过于宏大而难以实现。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.19 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"></path>
+                            </svg>
+                        </div>
+                        <div class="process-content card">
+                            <h3 class="process-title">第三步：个性化学习</h3>
+                            <p class="process-description">根据你的目标和学习风格，从资料库中匹配最适合你的学习资源，创建个性化学习计划。我们的推荐系统会考虑你的起点、学习偏好和时间安排，确保学习过程既高效又愉悦。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15 15H3v2h12v-2zm0-8H3v2h12V7zM3 13h18v-2H3v2zm0 8h18v-2H3v2zM3 3v2h18V3H3z"></path>
+                            </svg>
+                        </div>
+                        <div class="process-content card">
+                            <h3 class="process-title">第四步：刻意练习</h3>
+                            <p class="process-description">通过精心设计的练习任务，将理论知识转化为实际能力。每个练习都针对特定能力要素，通过足够的重复和渐进式难度设计，确保你能真正内化所学内容，形成肌肉记忆。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path>
+                            </svg>
+                        </div>
+                        <div class="process-content card">
+                            <h3 class="process-title">第五步：应用反馈</h3>
+                            <p class="process-description">在真实场景中应用所学能力，获取反馈并持续改进。我们的反馈系统会帮助你识别应用中的盲点和不足，并提供针对性的改进建议，形成正向的学习循环。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container testimonials-container">
+            <div class="section-title">
+                <h2>学习者故事</h2>
+                <p>听听那些已经通过我们的资源库成功提升自己核心能力的人怎么说</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card card">
+                    <p class="testimonial-content">在使用能力提升资料库三个月后，我的思维方式发生了显著变化。原来我总是习惯于线性思考问题，现在我能够从多个角度分析复杂问题，特别是系统思维和逆向思考的训练对我帮助很大。这不仅提升了我在工作中的决策质量，也让我的生活更加从容。</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">张</div>
+                        <div class="testimonial-info">
+                            <h4>张明</h4>
+                            <p>产品经理 | 思维认知能力提升</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card card">
+                    <p class="testimonial-content">语言表达一直是我的短板，尤其是在公开场合发言时常常紧张结巴。通过资料库的《表达的艺术》课程和系统练习，我学会了结构化表达和故事化叙述方法。上周的部门汇报中，我流畅地呈现了我的想法，还收到了领导的肯定，这种进步带给我极大的自信心！</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">李</div>
+                        <div class="testimonial-info">
+                            <h4>李芳</h4>
+                            <p>市场专员 | 语言表达能力提升</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card card">
+                    <p class="testimonial-content">情绪管理课程彻底改变了我处理压力的方式。以前遇到挑战时我常常陷入焦虑和自我怀疑，现在我能够识别这些情绪，理解它们的来源，并通过有效的方法调节它们。最近团队项目出现重大变故，我保持了冷静，带领团队寻找解决方案，而不是像以前那样慌乱抱怨。</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">王</div>
+                        <div class="testimonial-info">
+                            <h4>王强</h4>
+                            <p>团队负责人 | 情绪管理能力提升</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card card">
+                    <p class="testimonial-content">通过逻辑思考能力的训练，我发现自己处理复杂问题的方式有了质的飞跃。以前面对多变量问题时我常常无从下手，现在我能够系统地分解问题，找出关键影响因素，制定有效的解决方案。这不仅提升了我的工作效率，也让我在团队中的影响力大大增强。</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">陈</div>
+                        <div class="testimonial-info">
+                            <h4>陈华</h4>
+                            <p>咨询顾问 | 逻辑思考能力提升</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="control-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+                    </svg>
+                </button>
+                <button class="control-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="section faq section-gray" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>常见问题</h2>
+                <p>你可能想了解的问题，我们都在这里为你解答</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>如何确定我需要提升哪些核心能力?</h3>
+                        <div class="faq-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            <p>我们提供全面的能力测评工具，通过科学的问卷和情景测试，帮助你了解自己在各项核心能力上的现状和潜力。测评完成后，你将收到详细的能力分析报告，包括优势领域和建议提升的方向。此外，我们也会根据你的职业发展阶段和个人目标，为你推荐最具价值的能力提升路径。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>能力提升需要多长时间才能看到效果?</h3>
+                        <div class="faq-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            <p>能力提升是一个持续的过程，效果因人而异。一般来说，遵循我们的方法进行系统学习和实践，大多数人在1-3个月内就能感受到明显的变化。例如，思维方式的转变可能在几周内就有所体现，而复杂的人际关系能力可能需要3-6个月的持续练习才能形成新的行为模式。重要的是保持一致性和耐心，相信小的进步累积会带来显著的长期改变。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>资料库中的内容适合所有人吗?</h3>
+                        <div class="faq-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            <p>我们的资料库为不同学习阶段和背景的用户提供内容，从入门级到高阶水平都有覆盖。系统会根据你的能力测评结果和个人偏好，推荐最适合你的学习内容和路径。我们特别注重内容的实用性和可操作性，确保理论知识能转化为实际能力。无论你是学生、职场新人还是资深管理者，都能找到适合自己的能力提升资源。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何将学到的能力应用到实际生活中?</h3>
+                        <div class="faq-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            <p>我们强调"学以致用"的理念，每个学习模块都包含实践部分。我们提供情景模拟练习、行动计划模板和具体的应用指南，帮助你将所学转化为实际行动。此外，我们的社区平台允许学习者分享应用经验和挑战，互相支持和启发。我们还定期举办线上工作坊，针对特定场景进行能力应用训练，确保你能在真实生活中灵活运用所学内容。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>加入资料库后能得到哪些支持?</h3>
+                        <div class="faq-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            <p>加入资料库后，你将获得全面的学习支持体系：首先是个性化的学习路径推荐；其次是详细的学习进度追踪和反馈；第三是活跃的学习社区，可以与志同道合的伙伴交流讨论；第四是定期的能力提升线上工作坊；最后，高级会员还可以获得一对一的能力教练指导。我们的目标是为每位学习者提供全方位支持，确保你的能力提升之旅顺利高效。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>我很忙，每天只有碎片时间，能有效提升吗?</h3>
+                        <div class="faq-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-content">
+                            <p>我们理解现代人的时间挑战，因此特别设计了适合碎片化学习的内容形式。我们的资源有短小精悍的音频课程、可在15-20分钟内完成的微练习和随时可查的概念卡片。关键是保持一致性和连贯性，即使每天只有15-30分钟，持续坚持也能取得显著进步。我们的系统会帮你规划最适合你时间安排的学习计划，最大化利用你的可用时间。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section cta" id="cta">
+        <div class="container cta-container">
+            <h2 class="cta-title">准备好提升你的核心能力了吗？</h2>
+            <p class="cta-text">加入我们的能力提升资料库，开启系统化的能力成长之旅。无论你想提升思维认知、语言表达还是其他核心能力，我们都能为你提供科学有效的方法和资源。</p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="cta-btn">立即开始能力测评</a>
+                <a href="#" class="cta-btn outline">了解会员方案</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <div class="footer-logo-img">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <div class="footer-logo-text">能力提升资料库</div>
+                    </div>
+                    <p class="footer-about">我们致力于通过科学方法和优质资源，帮助每个人系统提升思维认知、语言表达等核心能力，成就更好的自己。</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">核心能力</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">思维认知能力</a></li>
+                        <li><a href="#">语言表达能力</a></li>
+                        <li><a href="#">逻辑思考能力</a></li>
+                        <li><a href="#">情绪管理能力</a></li>
+                        <li><a href="#">人际关系能力</a></li>
+                        <li><a href="#">自我认知能力</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">资源类型</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">电子书与指南</a></li>
+                        <li><a href="#">视频课程</a></li>
+                        <li><a href="#">音频内容</a></li>
+                        <li><a href="#">实践工具包</a></li>
+                        <li><a href="#">在线工作坊</a></li>
+                        <li><a href="#">能力测评</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">联系我们</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-text">contact@ability-library.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-text">400-123-4567</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-text">北京市海淀区中关村大街28号<br>创新大厦B座12层</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 能力提升资料库 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if(window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // 移动端菜单切换
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 如果是移动菜单，关闭它
+                    if(navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // FAQ 手风琴效果
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // 关闭其他开启的项
+                faqItems.forEach(otherItem => {
+                    if(otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // 切换当前项的状态
+                item.classList.toggle('active');
+            });
+        });
+        
+        // 轮播控制
+        const testimonialGrid = document.querySelector('.testimonials-grid');
+        const controlBtns = document.querySelectorAll('.control-btn');
+        
+        controlBtns[0].addEventListener('click', function() {
+            testimonialGrid.scrollBy({
+                left: -350,
+                behavior: 'smooth'
+            });
+        });
+        
+        controlBtns[1].addEventListener('click', function() {
+            testimonialGrid.scrollBy({
+                left: 350,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
